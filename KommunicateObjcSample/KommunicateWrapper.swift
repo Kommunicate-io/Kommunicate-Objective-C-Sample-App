@@ -97,6 +97,7 @@ import UserNotifications
             completion(nil, NSError(domain: "KMUserGeneration", code: 111, userInfo: nil))
             return
         }
+        user.applicationId = applicationId
         Kommunicate.registerUser(user) { (response, error) in
             if error == nil {
                 completion(response?.userKey, nil)

@@ -1,0 +1,4 @@
+target 'KommunicateObjcSample' do
+    use_frameworks!
+    pod 'Kommunicate'
+end
