@@ -14,6 +14,8 @@
 		8B35AC2F21665570004524CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B35AC2D21665570004524CE /* LaunchScreen.storyboard */; };
 		8B35AC3221665570004524CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B35AC3121665570004524CE /* main.m */; };
 		8B35AC3C21665571004524CE /* KommunicateObjcSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B35AC3B21665571004524CE /* KommunicateObjcSampleTests.m */; };
+		8B35AC492166609B004524CE /* KommunicateWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B35AC482166609B004524CE /* KommunicateWrapper.swift */; };
+		A990CA4FA1CC956D51C5DE53 /* Pods_KommunicateObjcSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 227719AB1D927E7A5429F1D6 /* Pods_KommunicateObjcSample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		227719AB1D927E7A5429F1D6 /* Pods_KommunicateObjcSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KommunicateObjcSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B35AC1F2166556D004524CE /* KommunicateObjcSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KommunicateObjcSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B35AC222166556D004524CE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8B35AC232166556D004524CE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -40,6 +43,10 @@
 		8B35AC3721665570004524CE /* KommunicateObjcSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KommunicateObjcSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B35AC3B21665571004524CE /* KommunicateObjcSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KommunicateObjcSampleTests.m; sourceTree = "<group>"; };
 		8B35AC3D21665571004524CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B35AC472166609A004524CE /* KommunicateObjcSample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KommunicateObjcSample-Bridging-Header.h"; sourceTree = "<group>"; };
+		8B35AC482166609B004524CE /* KommunicateWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KommunicateWrapper.swift; sourceTree = "<group>"; };
+		E0BB3FD17A6F60D1D52E2A4C /* Pods-KommunicateObjcSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KommunicateObjcSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-KommunicateObjcSample/Pods-KommunicateObjcSample.release.xcconfig"; sourceTree = "<group>"; };
+		EB9683A33AE4658449462309 /* Pods-KommunicateObjcSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KommunicateObjcSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KommunicateObjcSample/Pods-KommunicateObjcSample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A990CA4FA1CC956D51C5DE53 /* Pods_KommunicateObjcSample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +68,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		442B15C0B7FC670F9AF10C04 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EB9683A33AE4658449462309 /* Pods-KommunicateObjcSample.debug.xcconfig */,
+				E0BB3FD17A6F60D1D52E2A4C /* Pods-KommunicateObjcSample.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8B35AC162166556D004524CE = {
 			isa = PBXGroup;
 			children = (
 				8B35AC212166556D004524CE /* KommunicateObjcSample */,
 				8B35AC3A21665571004524CE /* KommunicateObjcSampleTests */,
 				8B35AC202166556D004524CE /* Products */,
+				442B15C0B7FC670F9AF10C04 /* Pods */,
+				BF5FD66516D0A874ADF45525 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,6 +109,8 @@
 				8B35AC2D21665570004524CE /* LaunchScreen.storyboard */,
 				8B35AC3021665570004524CE /* Info.plist */,
 				8B35AC3121665570004524CE /* main.m */,
+				8B35AC482166609B004524CE /* KommunicateWrapper.swift */,
+				8B35AC472166609A004524CE /* KommunicateObjcSample-Bridging-Header.h */,
 			);
 			path = KommunicateObjcSample;
 			sourceTree = "<group>";
@@ -103,6 +124,14 @@
 			path = KommunicateObjcSampleTests;
 			sourceTree = "<group>";
 		};
+		BF5FD66516D0A874ADF45525 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				227719AB1D927E7A5429F1D6 /* Pods_KommunicateObjcSample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -110,9 +139,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8B35AC4021665571004524CE /* Build configuration list for PBXNativeTarget "KommunicateObjcSample" */;
 			buildPhases = (
+				CB9147873BA8161C68A0B630 /* [CP] Check Pods Manifest.lock */,
 				8B35AC1B2166556D004524CE /* Sources */,
 				8B35AC1C2166556D004524CE /* Frameworks */,
 				8B35AC1D2166556D004524CE /* Resources */,
+				65A80A67E2B378AB304F84B2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +183,7 @@
 				TargetAttributes = {
 					8B35AC1E2166556D004524CE = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 					8B35AC3621665570004524CE = {
 						CreatedOnToolsVersion = 10.0;
@@ -198,12 +230,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		65A80A67E2B378AB304F84B2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-KommunicateObjcSample/Pods-KommunicateObjcSample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Applozic/Applozic.framework",
+				"${BUILT_PRODUCTS_DIR}/ApplozicSwift/ApplozicSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Kommunicate/Kommunicate.framework",
+				"${BUILT_PRODUCTS_DIR}/MGSwipeTableCell/MGSwipeTableCell.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Applozic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ApplozicSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kommunicate.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MGSwipeTableCell.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KommunicateObjcSample/Pods-KommunicateObjcSample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB9147873BA8161C68A0B630 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KommunicateObjcSample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8B35AC1B2166556D004524CE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				8B35AC272166556D004524CE /* ViewController.m in Sources */,
+				8B35AC492166609B004524CE /* KommunicateWrapper.swift in Sources */,
 				8B35AC3221665570004524CE /* main.m in Sources */,
 				8B35AC242166556D004524CE /* AppDelegate.m in Sources */,
 			);
@@ -361,8 +451,10 @@
 		};
 		8B35AC4121665571004524CE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB9683A33AE4658449462309 /* Pods-KommunicateObjcSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C25JNDCBM4;
 				INFOPLIST_FILE = KommunicateObjcSample/Info.plist;
@@ -372,14 +464,19 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.applozic.KommunicateObjcSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "KommunicateObjcSample/KommunicateObjcSample-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		8B35AC4221665571004524CE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0BB3FD17A6F60D1D52E2A4C /* Pods-KommunicateObjcSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C25JNDCBM4;
 				INFOPLIST_FILE = KommunicateObjcSample/Info.plist;
@@ -389,6 +486,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.applozic.KommunicateObjcSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "KommunicateObjcSample/KommunicateObjcSample-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -396,6 +495,7 @@
 		8B35AC4421665571004524CE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C25JNDCBM4;
@@ -415,6 +515,7 @@
 		8B35AC4521665571004524CE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C25JNDCBM4;
