@@ -15,34 +15,35 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSString *userId = <pass user Id>
-    NSString *applicationId = <pass your applicationID>
-    NSArray *agentIds = <pass an array of agentIds>
+    NSString *userId = @"<pass a user Id>";
+    NSString *applicationId = @"<pass your App ID>";
     [Kommunicate setupWithApplicationId:applicationId];
     if(!Kommunicate.isLoggedIn) {
-    [KommunicateWrapper.shared connectUserWithUserId:userId password:nil displayName:nil emailId:nil applicationId:applicationId completion:^(NSString * responseUserId, NSError * connectionError) {
-        if(!connectionError) {
-            [Kommunicate createConversationWithUserId: userId agentIds:agentIds botIds:nil useLastConversation:YES completion:^(NSString *clientChannelKey){
-                if(clientChannelKey) {
-                    NSLog(@"Client channel key %@", clientChannelKey);
+        [KommunicateWrapper.shared connectUserWithUserId:userId password:nil displayName:nil emailId:nil applicationId:applicationId completion:^(NSString * responseUserId, NSError * connectionError) {
+            if(!connectionError) {
+                [Kommunicate createConversationWithUserId:userId agentIds:@[] botIds:NULL useLastConversation:YES completion: ^(NSString *clientChannelKey){
+                    if(clientChannelKey) {
+                        NSLog(@"Client channel key %@", clientChannelKey);
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            [Kommunicate showConversationWithGroupId:clientChannelKey from:self completionHandler:^(BOOL shown) {
+                                NSLog(@"conversation shown");
+                            }];
+                        });
+                    }
+                }];
+            }
+        }];
+    } else {
+        [Kommunicate createConversationWithUserId:userId agentIds:@[] botIds:NULL useLastConversation:YES completion: ^(NSString *clientChannelKey){
+            if(clientChannelKey) {
+                NSLog(@"Client channel key %@", clientChannelKey);
+                dispatch_async(dispatch_get_main_queue(), ^{
                     [Kommunicate showConversationWithGroupId:clientChannelKey from:self completionHandler:^(BOOL shown) {
                         NSLog(@"conversation shown");
                     }];
-                }
-            }];
-        }
-    }];
-    } else {
-        [Kommunicate createConversationWithUserId: userId agentIds:agentIds botIds:nil useLastConversation:YES completion:^(NSString *clientChannelKey){
-            if(clientChannelKey) {
-                NSLog(@"Client channel key %@", clientChannelKey);
-                [Kommunicate showConversationWithGroupId:clientChannelKey from:self completionHandler:^(BOOL shown) {
-                    NSLog(@"conversation shown");
-                }];
+                });
             }
         }];
     }
 }
-
-
 @end

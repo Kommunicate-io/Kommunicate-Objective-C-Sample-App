@@ -249,7 +249,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-KommunicateObjcSample/Pods-KommunicateObjcSample-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-KommunicateObjcSample/Pods-KommunicateObjcSample-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Applozic/Applozic.framework",
 				"${BUILT_PRODUCTS_DIR}/ApplozicSwift/ApplozicSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
@@ -270,7 +270,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KommunicateObjcSample/Pods-KommunicateObjcSample-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KommunicateObjcSample/Pods-KommunicateObjcSample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CB9147873BA8161C68A0B630 /* [CP] Check Pods Manifest.lock */ = {
