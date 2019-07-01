@@ -21,7 +21,7 @@
     if(!Kommunicate.isLoggedIn) {
         [KommunicateWrapper.shared connectUserWithUserId:userId password:nil displayName:nil emailId:nil applicationId:applicationId completion:^(NSString * responseUserId, NSError * connectionError) {
             if(!connectionError) {
-                [Kommunicate createConversationWithUserId:userId agentIds:@[] botIds:NULL useLastConversation:YES completion: ^(NSString *clientChannelKey){
+                [Kommunicate createConversationWithUserId:userId agentIds:@[] botIds:NULL useLastConversation:YES clientConversationId: nil completion: ^(NSString *clientChannelKey){
                     if(clientChannelKey) {
                         NSLog(@"Client channel key %@", clientChannelKey);
                         dispatch_async(dispatch_get_main_queue(), ^{
@@ -34,7 +34,7 @@
             }
         }];
     } else {
-        [Kommunicate createConversationWithUserId:userId agentIds:@[] botIds:NULL useLastConversation:YES completion: ^(NSString *clientChannelKey){
+        [Kommunicate createConversationWithUserId:userId agentIds:@[] botIds:NULL useLastConversation:YES clientConversationId: nil completion: ^(NSString *clientChannelKey){
             if(clientChannelKey) {
                 NSLog(@"Client channel key %@", clientChannelKey);
                 dispatch_async(dispatch_get_main_queue(), ^{
