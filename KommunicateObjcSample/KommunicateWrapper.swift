@@ -47,7 +47,7 @@ import UserNotifications
 
         registerForNotification()
 
-        KMPushNotificationHandler.shared.dataConnectionNotificationHandlerWith(KMConfiguration())
+        KMPushNotificationHandler.shared.dataConnectionNotificationHandlerWith(Kommunicate.defaultConfiguration)
         let kmApplocalNotificationHandler : KMAppLocalNotification =  KMAppLocalNotification.appLocalNotificationHandler()
         kmApplocalNotificationHandler.dataConnectionNotificationHandler()
 
