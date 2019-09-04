@@ -9,8 +9,9 @@
 #import "AppDelegate.h"
 #import "Kommunicate-Swift.h"
 #import "KommunicateObjcSample-Swift.h"
+#import <UserNotifications/UserNotifications.h>
 
-@interface AppDelegate ()
+@interface AppDelegate () <UNUserNotificationCenterDelegate>
 
 @end
 
@@ -18,6 +19,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [UNUserNotificationCenter.currentNotificationCenter setDelegate:self];
     return [KommunicateWrapper.shared application:application didFinishLaunchingWithOptions:launchOptions];
 }
 
@@ -52,9 +54,16 @@
     [KommunicateWrapper.shared application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
 }
 
--(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(nonnull void (^)(UIBackgroundFetchResult))completionHandler{
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
+    [KommunicateWrapper.shared userNotificationCenter:center willPresent:notification withCompletionHandler:^(UNNotificationPresentationOptions options) {
+        completionHandler(options);
+    }];
+}
 
-    [KommunicateWrapper.shared application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
+    [KommunicateWrapper.shared userNotificationCenter:center didReceive:response withCompletionHandler:^{
+        completionHandler();
+    }];
 }
 
 @end
