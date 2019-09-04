@@ -35,38 +35,11 @@ import UserNotifications
         }
     }
 
-    @objc func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler
-        completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        print("Received notification With Completion :: \(userInfo.description)")
-        let kmPushNotificationService: KMPushNotificationService = KMPushNotificationService()
-        kmPushNotificationService.notificationArrived(to: application, with: userInfo)
-        completionHandler(UIBackgroundFetchResult.newData)
-    }
-
     @objc func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
         registerForNotification()
-
         KMPushNotificationHandler.shared.dataConnectionNotificationHandlerWith(Kommunicate.defaultConfiguration)
         let kmApplocalNotificationHandler : KMAppLocalNotification =  KMAppLocalNotification.appLocalNotificationHandler()
         kmApplocalNotificationHandler.dataConnectionNotificationHandler()
-
-        if (launchOptions != nil)
-        {
-            let dictionary = launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] as? NSDictionary
-
-            if (dictionary != nil)
-            {
-                print("launched from push notification")
-                let kmPushNotificationService: KMPushNotificationService = KMPushNotificationService()
-
-                let appState: NSNumber = NSNumber(value: 0 as Int32)
-                let kommunicateProcessed = kmPushNotificationService.processPushNotification(launchOptions,updateUI:appState)
-                if !kommunicateProcessed {
-                    //Note: notification for app
-                }
-            }
-        }
         return true
     }
 
@@ -107,22 +80,34 @@ import UserNotifications
         }
     }
 
-    func registerForNotification() {
-        if #available(iOS 10.0, *) {
-            UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in
+    @objc func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        let service = KMPushNotificationService()
+        let dict = notification.request.content.userInfo
+        guard !service.isKommunicateNotification(dict) else {
+            service.processPushNotification(dict, appState: UIApplication.shared.applicationState)
+            completionHandler([])
+            return
+        }
+        completionHandler([.sound, .badge, .alert])
+    }
 
-                if granted {
-                    DispatchQueue.main.async {
-                        UIApplication.shared.registerForRemoteNotifications()
-                    }
+    @objc func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        let service = KMPushNotificationService()
+        let dict = response.notification.request.content.userInfo
+        if service.isApplozicNotification(dict) {
+            service.processPushNotification(dict, appState: UIApplication.shared.applicationState)
+        }
+        completionHandler()
+    }
+
+    func registerForNotification() {
+        UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in
+
+            if granted {
+                DispatchQueue.main.async {
+                    UIApplication.shared.registerForRemoteNotifications()
                 }
             }
-        } else {
-            // Fallback on earlier versions
-            let settings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
-            UIApplication.shared.registerUserNotificationSettings(settings)
-            UIApplication.shared.registerForRemoteNotifications()
-
         }
     }
 }
