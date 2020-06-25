@@ -19,7 +19,7 @@
     NSString *applicationId = @"<pass your App ID>";
     [Kommunicate setupWithApplicationId:applicationId];
     if(!Kommunicate.isLoggedIn) {
-        [KommunicateWrapper.shared connectUserWithUserId:userId password:nil displayName:nil emailId:nil applicationId:applicationId completion:^(NSString * responseUserId, NSError * connectionError) {
+        [KommunicateWrapper.shared connectUserWithUserId:userId password:@"reytum" displayName:nil emailId:nil metadata: nil completion:^(NSString * responseUserId, NSError * connectionError) {
             if(!connectionError) {
                 [Kommunicate createConversationWithUserId:userId agentIds:@[] botIds:NULL useLastConversation:YES clientConversationId: nil completion: ^(NSString *clientChannelKey){
                     if(clientChannelKey) {

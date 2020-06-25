@@ -36,6 +36,7 @@ import UserNotifications
     }
 
     @objc func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        useCustomConfigurations()
         registerForNotification()
         KMPushNotificationHandler.shared.dataConnectionNotificationHandlerWith(Kommunicate.defaultConfiguration, Kommunicate.kmConversationViewConfiguration)
         let kmApplocalNotificationHandler : KMAppLocalNotification =  KMAppLocalNotification.appLocalNotificationHandler()
@@ -64,13 +65,13 @@ import UserNotifications
                            password: String? = nil,
                            displayName: String? = nil,
                            emailId: String? = nil,
-                           applicationId: String,
+                           metadata: NSMutableDictionary? = nil,
                            completion : @escaping (_ response: String?, _ error: NSError?) -> Void) {
         guard let user = KMUser(userId: userId, password: password, email: emailId, andDisplayName: displayName) else {
             completion(nil, NSError(domain: "KMUserGeneration", code: 111, userInfo: nil))
             return
         }
-        user.applicationId = applicationId
+        user.metadata = metadata
         Kommunicate.registerUser(user) { (response, error) in
             if error == nil {
                 completion(response?.userKey, nil)
@@ -109,5 +110,9 @@ import UserNotifications
                 }
             }
         }
+    }
+
+    @objc func useCustomConfigurations() {
+        // Add config options
     }
 }

@@ -1,26 +1,26 @@
 PODS:
   - Applozic (7.3.0):
     - SDWebImage (~> 5.1.0)
-  - ApplozicSwift (5.2.0):
-    - ApplozicSwift/Complete (= 5.2.0)
-  - ApplozicSwift/Complete (5.2.0):
+  - ApplozicSwift (5.5.0):
+    - ApplozicSwift/Complete (= 5.5.0)
+  - ApplozicSwift/Complete (5.5.0):
     - Applozic (~> 7.3.0)
     - ApplozicSwift/RichMessageKit
     - Kingfisher (~> 5.13.0)
     - MGSwipeTableCell (~> 1.6.11)
-  - ApplozicSwift/RichMessageKit (5.2.0)
-  - Kingfisher (5.13.3):
-    - Kingfisher/Core (= 5.13.3)
-  - Kingfisher/Core (5.13.3)
-  - Kommunicate (5.0.0):
-    - ApplozicSwift (~> 5.2.0)
+  - ApplozicSwift/RichMessageKit (5.5.0)
+  - Kingfisher (5.13.4):
+    - Kingfisher/Core (= 5.13.4)
+  - Kingfisher/Core (5.13.4)
+  - Kommunicate (5.2.0):
+    - ApplozicSwift (~> 5.5.0)
   - MGSwipeTableCell (1.6.11)
   - SDWebImage (5.1.1):
     - SDWebImage/Core (= 5.1.1)
   - SDWebImage/Core (5.1.1)
 
 DEPENDENCIES:
-  - Kommunicate
+  - Kommunicate (~> 5.2.0)
 
 SPEC REPOS:
   trunk:
@@ -33,12 +33,12 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Applozic: 9fffca38afaf77ced5196619e00a4c67b074ecfc
-  ApplozicSwift: 0ddfca3ed35fa19a065e56e45405a95b55a61f56
-  Kingfisher: d2b3d6a7200c93b34de9afcdf25c8dd9282ec277
-  Kommunicate: 0cd5e6616ce36ad44d3e1bedf480136cb15d19e0
+  ApplozicSwift: e9fe86679b7b86ba6c670ad6750ab2deab07fd66
+  Kingfisher: d2279a7abece3c7f25a80cd2b7f363ca5cf3f44c
+  Kommunicate: 29e08e3c0194b3602b44eca881b00eca693cd84f
   MGSwipeTableCell: b804e4e450dee439c42250be90bd50458bf67fce
   SDWebImage: 96d7f03415ccb28d299d765f93557ff8a617abd8
 
-PODFILE CHECKSUM: bd5d076a2f011ccb63291e3edcfeab335d039deb
+PODFILE CHECKSUM: 89e4f0508cbf0bb7012fb1c65e91d5c6263bfdb4
 
 COCOAPODS: 1.9.1
