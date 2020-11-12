@@ -1,26 +1,26 @@
 PODS:
-  - Applozic (7.3.0):
-    - SDWebImage (~> 5.1.0)
-  - ApplozicSwift (5.5.0):
-    - ApplozicSwift/Complete (= 5.5.0)
-  - ApplozicSwift/Complete (5.5.0):
-    - Applozic (~> 7.3.0)
+  - Applozic (7.11.1):
+    - SDWebImage (~> 5.9.2)
+  - ApplozicSwift (5.11.0):
+    - ApplozicSwift/Complete (= 5.11.0)
+  - ApplozicSwift/Complete (5.11.0):
+    - Applozic (~> 7.11.0)
     - ApplozicSwift/RichMessageKit
-    - Kingfisher (~> 5.13.0)
+    - Kingfisher (~> 5.14.0)
     - MGSwipeTableCell (~> 1.6.11)
-  - ApplozicSwift/RichMessageKit (5.5.0)
-  - Kingfisher (5.13.4):
-    - Kingfisher/Core (= 5.13.4)
-  - Kingfisher/Core (5.13.4)
-  - Kommunicate (5.2.0):
-    - ApplozicSwift (~> 5.5.0)
+  - ApplozicSwift/RichMessageKit (5.11.0)
+  - Kingfisher (5.14.1):
+    - Kingfisher/Core (= 5.14.1)
+  - Kingfisher/Core (5.14.1)
+  - Kommunicate (5.8.0):
+    - ApplozicSwift (~> 5.11.0)
   - MGSwipeTableCell (1.6.11)
-  - SDWebImage (5.1.1):
-    - SDWebImage/Core (= 5.1.1)
-  - SDWebImage/Core (5.1.1)
+  - SDWebImage (5.9.4):
+    - SDWebImage/Core (= 5.9.4)
+  - SDWebImage/Core (5.9.4)
 
 DEPENDENCIES:
-  - Kommunicate (~> 5.2.0)
+  - Kommunicate (~> 5.8.0)
 
 SPEC REPOS:
   trunk:
@@ -32,13 +32,13 @@ SPEC REPOS:
     - SDWebImage
 
 SPEC CHECKSUMS:
-  Applozic: 9fffca38afaf77ced5196619e00a4c67b074ecfc
-  ApplozicSwift: e9fe86679b7b86ba6c670ad6750ab2deab07fd66
-  Kingfisher: d2279a7abece3c7f25a80cd2b7f363ca5cf3f44c
-  Kommunicate: 29e08e3c0194b3602b44eca881b00eca693cd84f
+  Applozic: 673eba55f167f1b06004ec8f959b356d3a59af66
+  ApplozicSwift: be53e7cd9b957e4e5d51c92839aa8006e74f6e06
+  Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
+  Kommunicate: 02a19d5b314088ae3769d3b85556414eafe67f12
   MGSwipeTableCell: b804e4e450dee439c42250be90bd50458bf67fce
-  SDWebImage: 96d7f03415ccb28d299d765f93557ff8a617abd8
+  SDWebImage: b69257f4ab14e9b6a2ef53e910fdf914d8f757c1
 
-PODFILE CHECKSUM: 89e4f0508cbf0bb7012fb1c65e91d5c6263bfdb4
+PODFILE CHECKSUM: 67ea7033e104ca46d968007131ce1970204125f6
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.10.0
