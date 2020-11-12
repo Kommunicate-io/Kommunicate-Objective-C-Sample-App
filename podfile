@@ -2,5 +2,5 @@ platform :ios, '10.0'
 
 target 'KommunicateObjcSample' do
     use_frameworks!
-    pod 'Kommunicate', '~> 5.2.0'
+    pod 'Kommunicate', '~> 5.8.0'
 end
