@@ -15,8 +15,8 @@ To run the example project, clone the repo, and run pod install.
 
 ## Requirements
 
-- iOS 9.0+
-- Xcode 10+
+- iOS 10+
+- Xcode 12+
 
 
 ## Docs
