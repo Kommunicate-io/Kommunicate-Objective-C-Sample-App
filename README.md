@@ -15,9 +15,27 @@ To get started with Kommunicate iOS SDK, head over to Kommunicate website and Si
 
 To run the example project, clone the repo, and run pod install.
 
+# How to Run the Project
+
+## Follow these steps to run the project:
+
+- Get Your App ID:
+    Start by obtaining the appid from the dashboard.
+- Open the Project in Xcode:
+    Launch Xcode and open the project you want to work on.
+- Navigate to viewController.m:
+    Locate and open the viewController.m file within your project.
+- Configure User and App Information:
+    In the viewController.m file, find the following lines:
+        `NSString *userId = @"<pass a user Id>";`
+        `NSString *applicationId = @"<pass your App ID>";`
+    Replace <pass a user Id> with the desired user ID and <pass your App ID> with your actual App ID.
+- Build the Project:
+    Finally, build the project.
+
 ## Requirements
 
-- iOS 10+
+- iOS 13+
 - Xcode 12+
 
 
