@@ -24,12 +24,7 @@
                     if(clientChannelKey) {
                         NSLog(@"Client channel key %@", clientChannelKey);
                         dispatch_async(dispatch_get_main_queue(), ^{
-                            [Kommunicate showConversationWithGroupId:clientChannelKey
-                                                                from:self
-                                                    prefilledMessage:nil
-                                                   completionHandler:^(BOOL show) {
-                                NSLog(@"conversation shown");
-                            }];
+                            [Kommunicate showConversationsFrom: self];
                         });
                     }
                 }];
@@ -40,12 +35,7 @@
             if(clientChannelKey) {
                 NSLog(@"Client channel key %@", clientChannelKey);
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [Kommunicate showConversationWithGroupId:clientChannelKey
-                                                        from:self
-                                            prefilledMessage:nil
-                                           completionHandler:^(BOOL show) {
-                        NSLog(@"conversation shown");
-                    }];
+                    [Kommunicate showConversationsFrom: self];
                 });
             }
         }];
